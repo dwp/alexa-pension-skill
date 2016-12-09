@@ -58,9 +58,7 @@ DwpPensionAge.prototype.eventHandlers.onSessionStarted = function (sessionStarte
 
 DwpPensionAge.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     console.log("HelloWorld onLaunch requestId: " + launchRequest.requestId + ", sessionId: " + session.sessionId);
-    var speechOutput = "Welcome to the Alexa Skills Kit, you can say hello";
-    var repromptText = "You can say hello";
-    response.ask(speechOutput, repromptText);
+    getWelcomeResponse(response);
 };
 
 DwpPensionAge.prototype.eventHandlers.onSessionEnded = function (sessionEndedRequest, session) {
@@ -86,7 +84,7 @@ DwpPensionAge.prototype.intentHandlers = {
             "Just ask: What is my pension age or What are the pension eligibility criteria? </speak>");
     },
     "AMAZON.StopIntent": function (intent, session, response) {
-        var speechOutput = "Thank you and goodbye";
+        var speechOutput = "Thank you very much for using D.W.P. and goodbye";
         response.tell(speechOutput);
     }
 };
