@@ -23,9 +23,6 @@
  */
 var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
-var KEY_DOB = "date_of_birth";
-var KEY_GENDER = "gender"
-
 /**
  * The AlexaSkill prototype and helper functions
  */
@@ -111,15 +108,66 @@ function getWelcomeResponse(response) {
     response.ask(speechOutput, repromptOutput);
 }
 
+function getPensionAge(response) {
+    var speechText = "",
+        repromptText = "",
+        speechOutput,
+        repromptOutput;
+
+    if (intent.slots.date_of_birth) {
+        session.date_of_birth = intent.slots.date_of_birth
+    }
+    if (intent.slots.gender) {
+        session.gender = intent.slots.gender
+    }
+
+    attributesStatus = evaluateResponse(session)
+
+    if (session.gender && session.date_of_birth) {
+        calculatePensionAge(session.date_of_birth, session.gender)
+    } else if (session.date_of_birth) {
+        // ask for gender
+    } else if (session.gender) {
+        // ask for
+    } else {
+
+    }
+
+
+}
+
 /**
- *
  * Returns the pension age
  * @param date_of_birth
  * @param gender
  */
 function calculatePensionAge(date_of_birth, gender) {
-    null
+    if (date_of_birth.getFullYear() > 2050) {
+
+    } else {
+        return
+    }
 }
+
+/**
+ * Returns whether or not we need further information
+ * @param session
+ * @returns {{}|*}
+ */
+function evaluateResponse(session) {
+
+    result = {}
+    
+    //do some magic
+    // result.finite = true
+    // result.missingAttributes = ["gender", "date_of_birth"]
+
+
+    return result
+}
+
+
+
 
 // Create the handler that responds to the Alexa Request.
 exports.handler = function (event, context) {
