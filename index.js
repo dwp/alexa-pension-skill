@@ -27,7 +27,9 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
  * The AlexaSkill prototype and helper functions
  */
 var AlexaSkill = require('./AlexaSkill');
-
+const PENSIONRULES = require('./PensionRules.json');
+const GENDERCUTOFFDATE = new Date("6.12.1953")
+let log = (x) => console.log(x);
 /**
  * HelloWorld is a child of AlexaSkill.
  * To read more about inheritance in JavaScript, see the link below.
@@ -71,10 +73,15 @@ DwpPensionAge.prototype.eventHandlers.onSessionEnded = function (sessionEndedReq
 DwpPensionAge.prototype.intentHandlers = {
     // register custom intent handlers
     "PensionAgeIntent": function (intent, session, response) {
-        response.tellWithCard("Hello World!", "Hello World", "Hello World!");
+        getPensionAge(intent, session, response)
     },
+    // To be improved
     "PensionEligibilityIntent": function (intent, session, response) {
-        response.tellWithCard("Hello World!", "Hello World", "Hello World!");
+        let text = "Eligibility. You must claim the new State Pension if you reach State Pension age on or after 6 April 2016. " +
+            "The earliest you can get the basic State Pension is when you reach State Pension age. " +
+            "To get the full basic State Pension you need a total of 30 qualifying years of National Insurance contributions or credits. " +
+            "You can find more information at www.gov.uk/state-pension/eligibility"
+        response.tellWithCard(text);
     },
     "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("<speak>You can ask DWP for your pension age and for the eligibility criteria. <break time=\"0.2s\" />" +
@@ -94,7 +101,7 @@ DwpPensionAge.prototype.intentHandlers = {
 function getWelcomeResponse(response) {
     // If we wanted to initialize the session to have some attributes we could add those here.
     var speechText = "Welcome to D.W.P. Pension Age calculator. You can ask to calculate your pension age or for the U.K. pension eligibility criteria?";
-    var repromptText = "<break>You can say, <break time=\"0.2s\">" +
+    var repromptText = "<speak>You can say, <break time=\"0.2s\">" +
         "Calculate my pension age or what are the eligibility criteria in UK.</speak>";
 
     var speechOutput = {
@@ -108,65 +115,157 @@ function getWelcomeResponse(response) {
     response.ask(speechOutput, repromptOutput);
 }
 
-function getPensionAge(response) {
-    var speechText = "",
-        repromptText = "",
-        speechOutput,
-        repromptOutput;
-
-    if (intent.slots.date_of_birth) {
-        session.date_of_birth = intent.slots.date_of_birth
+function getPensionAge(intent, session, response) {
+    if (intent.slots.dob) {
+        session.attributes.dob = intent.slots.dob;
+        session.attributes.yob = intent.slots.dob.getFullYear();
     }
     if (intent.slots.gender) {
-        session.gender = intent.slots.gender
+        session.attributes.gender = intent.slots.gender;
+    }
+    if (intent.slots.yob) {
+        session.attributes.yob = intent.slots.yob;
     }
 
-    attributesStatus = evaluateResponse(session)
+    let context = session.attributes;
 
-    if (session.gender && session.date_of_birth) {
-        calculatePensionAge(session.date_of_birth, session.gender)
-    } else if (session.date_of_birth) {
-        // ask for gender
-    } else if (session.gender) {
-        // ask for
-    } else {
 
+    switch (getNextResponse(context)) {
+        case 'askDob':
+            log("Ask for Date of Birth");
+            speechOutput = "";
+            repromptOutput = "";
+            // response.ask()
+            break;
+        case 'askGender':
+            log("Ask for Gender");
+            speechOutput = "";
+            repromptOutput = "";
+            // response.ask()
+            break;
+        case 'tellPensionAge':
+            log("Tell finate pension age results");
+            getPensionAge(context);
+            speechOutput = "";
+            cardContent = "";
+            cardTitle = "";
+            response.tellWithCard(speechOutput, cardTitle, cardContent)
+            break;
     }
-
-
 }
+
+
+/**
+ * Returns the next response based on the current context
+ * @param context
+ * @returns {{}}
+ */
+function getNextResponse(context) {
+    let question = {};
+
+
+    if (!context.yob && !context.dob && !context.gender) {
+        question.next = "askDob"
+
+    } else if (context.yob && !context.dob) {
+        if (isDobNeeded(context.yob)) {
+            question.next = 'askDob';
+
+        } else if (isGenderNeeded(new Date(context.yob, 0, 1)) && !context.gender){
+            question.next = 'askGender';
+        } else {
+            question.next = 'tellPensionAge'
+        }
+
+    } else if (context.dob && !context.gender) {
+        if (isGenderNeeded(context.dob)) {
+            question.next = 'askGender';
+        }
+
+    } else if (context.gender && !context.dob && !context.yob) {
+        question.next = 'askDob';
+    } else {
+        question.next = 'tellPensionAge'
+    }
+    return question;
+}
+
+
 
 /**
  * Returns the pension age
- * @param date_of_birth
- * @param gender
+ * @param context
  */
-function calculatePensionAge(date_of_birth, gender) {
-    if (date_of_birth.getFullYear() > 2050) {
+function getPensionAge(context) {
+    let pension = {};
+    let dob = context.dob;
+    let gender = (!context.gender) ? "unisex" : context.gender;
 
-    } else {
-        return
+    if (!dob) {
+        dob = new Date(context.yob, 0, 1);
     }
+
+
+
+    function calculatePensionStats(pensionRule) {
+        let pension = {
+            years: pensionRule.pensionyears,
+            month: pensionRule.pensionmonth
+        };
+
+        // Only include the pension date if we have the date of birth
+        if (context.dob) {
+            if (pensionRule.rule == "calculated") {
+                pension.date = new Date(dob).set(dob.getMonth() + pensionRule.totalmonth);
+            } else {
+                date = pensionRule.pensiondate;
+            }
+        }
+
+        return pension
+    }
+
+
+    function getRuleFromFile(dob, gender) {
+        for (let item of PENSIONRULES) {
+            if (dob > item.dob
+                && dob < item.dobrange
+                && gender == item.gender) {
+                return item;
+            }
+        }
+    }
+
+
+    return calculatePensionStats(getRuleFromFile(dob, gender));
 }
 
 /**
- * Returns whether or not we need further information
- * @param session
- * @returns {{}|*}
+ * Returns whether or not we need gender information
+ * @param dob (date of birth)
+ * @returns {boolean}
  */
-function evaluateResponse(session) {
-
-    result = {}
-    
-    //do some magic
-    // result.finite = true
-    // result.missingAttributes = ["gender", "date_of_birth"]
-
-
-    return result
+function isGenderNeeded(dob) {
+    return dob < GENDERCUTOFFDATE;
 }
 
+/**
+ * Returns true if date of birth (dob) is needed or not
+ * @param yob year of birth
+ * @returns {boolean}
+ */
+function isDobNeeded(yob) {
 
+    if (yob < 1950) {
+        return false
+    } else if (yob > 1954 && yob < 1960) {
+        return false
+    } else if (yob > 1961 && yob < 1977) {
+        return false
+    } else {
+        return true
+    }
+}
 
 
 // Create the handler that responds to the Alexa Request.
