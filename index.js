@@ -144,7 +144,7 @@ function getPensionAge(intent, session, response) {
             // response.ask()
             break;
         case 'tellPensionAge':
-            log("Tell finate pension age results");
+            log("Tell finite pension age results");
             getPensionAge(context);
             speechOutput = "";
             cardContent = "";
