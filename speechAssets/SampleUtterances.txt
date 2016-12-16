@@ -1,20 +1,41 @@
-TopSellers get top sellers for {Category}
-TopSellers get best sellers for {Category}
-TopSellers get me {Category}
-TopSellers top {Category}
-TopSellers top products in {Category}
-TopSellers top sellers in {Category}
-TopSellers {Category}
+PensionEligibilityIntent What are the eligibility criteria
+PensionEligibilityIntent Am I eligible
+PensionEligibilityIntent Am I eligible for U.K. pension
+PensionEligibilityIntent Am I eligible for pension
+PensionEligibilityIntent eligibility
+PensionEligibilityIntent When am I eligible for pension
+PensionEligibilityIntent Am I eligible for pension
+PensionEligibilityIntent What are the criteria
+PensionEligibilityIntent Is my husband eligible
+PensionEligibilityIntent Do I get pension
+PensionEligibilityIntent what pension
 
-HearMore yes
-HearMore yep
-HearMore yeah
-HearMore sure
-HearMore yes please
-HearMore affirmative
 
-DontHearMore no
-DontHearMore nope
-DontHearMore no thank you
-DontHearMore not now
-DontHearMore negative
+PensionAgeIntent {dob}
+PensionAgeIntent {gender}
+PensionAgeIntent {year}
+PensionAgeIntent My birthday is {dob}
+PensionAgeIntent My date of birth is {dob}
+PensionAgeIntent date of birth is {dob}
+PensionAgeIntent I'm born {dob}
+PensionAgeIntent I'm born at {dob}
+PensionAgeIntent I'm {gender}
+PensionAgeIntent My gender is {gender}
+PensionAgeIntent I was born in {year}
+PensionAgeIntent I was born in {year}
+PensionAgeIntent What is my pension age
+PensionAgeIntent Pension age
+PensionAgeIntent pension age in the U.K.
+PensionAgeIntent Calculate my pension
+PensionAgeIntent Calculate my pension age
+PensionAgeIntent Pension age calculator
+PensionAgeIntent When do I get my pension
+PensionAgeIntent When pension
+PensionAgeIntent D.W.P. what is my pension
+PensionAgeIntent D.W.P. What is my pension age
+PensionAgeIntent D.W.P. Pension age
+PensionAgeIntent D.W.P. pension age in the U.K.
+PensionAgeIntent D.W.P. Calculate my pension
+PensionAgeIntent D.W.P. Pension age calculator
+PensionAgeIntent D.W.P. When do I get my pension
+PensionAgeIntent D.W.P. When pension

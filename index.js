@@ -1,12 +1,12 @@
 /**
-    Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ Copyright 2014-2015 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 
-    Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
+ Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with the License. A copy of the License is located at
 
-        http://aws.amazon.com/apache2.0/
+ http://aws.amazon.com/apache2.0/
 
-    or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
-*/
+ or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions and limitations under the License.
+ */
 
 /**
  * This simple sample has no external dependencies or session management, and shows the most basic
@@ -21,15 +21,15 @@
 /**
  * App ID for the skill
  */
-var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
+var APP_ID = "amzn1.ask.skill.[yourKey]"; //replace with "amzn1.echo-sdk-ams.app.[your-unique-value-here]";
 
 /**
  * The AlexaSkill prototype and helper functions
  */
 var AlexaSkill = require('./AlexaSkill');
-const PENSIONRULES = require('./PensionRules.json');
-const GENDERCUTOFFDATE = new Date("6.12.1953")
-let log = (x) => console.log(x);
+var PENSIONRULES = require('./PensionRules.json');
+var GENDERCUTOFFDATE = new Date("6.12.1953")
+var log = (x) => console.log(x);
 /**
  * HelloWorld is a child of AlexaSkill.
  * To read more about inheritance in JavaScript, see the link below.
@@ -77,11 +77,11 @@ DwpPensionAge.prototype.intentHandlers = {
     },
     // To be improved
     "PensionEligibilityIntent": function (intent, session, response) {
-        let text = "Eligibility. You must claim the new State Pension if you reach State Pension age on or after 6 April 2016. " +
+        var text = "<speak>Eligibility. You must claim the new State Pension if you reach State Pension age on or after 6 April 2016. " +
             "The earliest you can get the basic State Pension is when you reach State Pension age. " +
             "To get the full basic State Pension you need a total of 30 qualifying years of National Insurance contributions or credits. " +
-            "You can find more information at www.gov.uk/state-pension/eligibility"
-        response.tellWithCard(text);
+            "You can find more information at www.gov.uk/state-pension/eligibility</speak>"
+        response.tell(text);
     },
     "AMAZON.HelpIntent": function (intent, session, response) {
         response.ask("<speak>You can ask DWP for your pension age and for the eligibility criteria. <break time=\"0.2s\" />" +
@@ -95,18 +95,19 @@ DwpPensionAge.prototype.intentHandlers = {
 
 
 
+
 /**
  * Returns the welcome response for when a user invokes this skill.
  */
 function getWelcomeResponse(response) {
     // If we wanted to initialize the session to have some attributes we could add those here.
-    var speechText = "Welcome to D.W.P. Pension Age calculator. You can ask to calculate your pension age or for the U.K. pension eligibility criteria?";
+    var speechText = "<speak><s>Welcome to <say-as intepret-as='spell-out'>DWP</say-as> Pension Age calculator.</s> <s>You can ask to calculate your pension age or for the U.K. pension eligibility criteria?</s></speak>";
     var repromptText = "<speak>You can say, <break time=\"0.2s\">" +
-        "Calculate my pension age or what are the eligibility criteria in UK.</speak>";
+        "Calculate my pension age or what are the eligibility criteria in the <say-as intepret-as='spell-out'>UK</say-as></speak>.";
 
     var speechOutput = {
         speech: speechText,
-        type: AlexaSkill.speechOutputType.PLAIN_TEXT
+        type: AlexaSkill.speechOutputType.SSML
     };
     var repromptOutput = {
         speech: repromptText,
@@ -116,6 +117,17 @@ function getWelcomeResponse(response) {
 }
 
 function getPensionAge(intent, session, response) {
+
+    var speechOutput = {
+        speech: speechText,
+        type: AlexaSkill.speechOutputType.PLAIN_TEXT
+    };
+    var repromptOutput = {
+        speech: repromptText,
+        type: AlexaSkill.speechOutputType.SSML
+    };
+
+    // check for slots
     if (intent.slots.dob) {
         session.attributes.dob = intent.slots.dob;
         session.attributes.yob = intent.slots.dob.getFullYear();
@@ -127,32 +139,33 @@ function getPensionAge(intent, session, response) {
         session.attributes.yob = intent.slots.yob;
     }
 
-    let context = session.attributes;
+    var context = session.attributes;
 
-
+    // respond to
     switch (getNextResponse(context)) {
         case 'askDob':
             log("Ask for Date of Birth");
-            speechOutput = "";
-            repromptOutput = "";
-            // response.ask()
+            speechOutput.speech = "";
+            repromptOutput.speech = "";
+            response.ask(speechOutput, repromptOutput)
             break;
         case 'askGender':
             log("Ask for Gender");
             speechOutput = "";
             repromptOutput = "";
-            // response.ask()
+            response.ask(speechOutput, repromptOutput)
             break;
         case 'tellPensionAge':
-            log("Tell finite pension age results");
-            getPensionAge(context);
-            speechOutput = "";
-            cardContent = "";
-            cardTitle = "";
+            log("Tell finite pension age results, and tell Calvin to lock his screen");
+            pensionAge = toPensionAgeSnippet(getPensionAge(context));
+            speechOutput.speech = pensionAge;
+            cardContent = pensionAge;
+            cardTitle = "Your DWP Pension Age Results";
             response.tellWithCard(speechOutput, cardTitle, cardContent)
             break;
     }
 }
+
 
 
 /**
@@ -161,7 +174,7 @@ function getPensionAge(intent, session, response) {
  * @returns {{}}
  */
 function getNextResponse(context) {
-    let question = {};
+    var question = {};
 
 
     if (!context.yob && !context.dob && !context.gender) {
@@ -197,9 +210,9 @@ function getNextResponse(context) {
  * @param context
  */
 function getPensionAge(context) {
-    let pension = {};
-    let dob = context.dob;
-    let gender = (!context.gender) ? "unisex" : context.gender;
+    var pension = {};
+    var dob = context.dob;
+    var gender = (!context.gender) ? "unisex" : context.gender;
 
     if (!dob) {
         dob = new Date(context.yob, 0, 1);
@@ -208,7 +221,7 @@ function getPensionAge(context) {
 
 
     function calculatePensionStats(pensionRule) {
-        let pension = {
+        var pension = {
             years: pensionRule.pensionyears,
             month: pensionRule.pensionmonth
         };
@@ -216,7 +229,7 @@ function getPensionAge(context) {
         // Only include the pension date if we have the date of birth
         if (context.dob) {
             if (pensionRule.rule == "calculated") {
-                pension.date = new Date(dob).set(dob.getMonth() + pensionRule.totalmonth);
+                pension.date = new Date(dob).setMonth(dob.getMonth() + pensionRule.totalmonth);
             } else {
                 date = pensionRule.pensiondate;
             }
@@ -227,17 +240,37 @@ function getPensionAge(context) {
 
 
     function getRuleFromFile(dob, gender) {
-        for (let item of PENSIONRULES) {
-            if (dob > item.dob
-                && dob < item.dobrange
+        var rule = {};
+        for (var item of PENSIONRULES) {
+            if (dob > new Date(item.dob)
+                && dob < new Date(item.dobrange)
                 && gender == item.gender) {
-                return item;
+                rule = item;
             }
         }
+        return rule;
     }
 
 
     return calculatePensionStats(getRuleFromFile(dob, gender));
+}
+
+
+function toPensionAgeSnippet(pensionAge) {
+    var text = "<s>Your pension age is ";
+
+    text += "<say-as interpret-as='cardinal'>" + pensionAge.years + "</say-as> years";
+
+    if (pensionAge.month) {
+        text += " and " + "<say-as interpret-as='cardinal'>" + pensionAge.month + "</say-as> month";
+    }
+    text += ".</s>";
+
+    if (pensionAge.date) {
+        text += "<s>Your pension date is <say-as interpret-as='date' format='mdy'>"+ new Date(pensionAge.date).toDateString() + "</say-as>. </s>"
+    }
+
+    return text;
 }
 
 /**

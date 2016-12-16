@@ -1,28 +1,30 @@
 {
   "intents": [
     {
-      "intent": "TopSellers",
+      "intent": "PensionAgeIntent",
       "slots": [
         {
-          "name": "Category",
-          "type": "LIST_OF_CATEGORIES"
+          "name": "year",
+          "type": "LIST_OF_YEARS"
+        },
+        {
+          "name": "dob",
+          "type": "AMAZON.DATE"
+        },
+        {
+          "name": "gender",
+          "type": "LIST_OF_GENDERS"
         }
       ]
     },
     {
-      "intent": "HearMore"
-    },
-    {
-      "intent": "DontHearMore"
+      "intent": "PensionEligibilityIntent"
     },
     {
       "intent": "AMAZON.HelpIntent"
     },
     {
       "intent": "AMAZON.StopIntent"
-    },
-    {
-      "intent": "AMAZON.CancelIntent"
     }
   ]
 }
