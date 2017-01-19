@@ -23,9 +23,11 @@ Lambda has an online editor where you can write or paste the functions you want 
 What files do you need to zip:
 
 ```
-./index.js
-./node_modules
-./OTHER_FILES_AND_ASSETS
+# Essential! 
+./index.js # You need to have a file named index.js in your folder when you zip it up for uploading to AWS Lambda
+./node_modules # This folder contains all the dependencies
+
+# if you have other directories or files with code, you need to add them too
 ```
 
 > NOTE!
