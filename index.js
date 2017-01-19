@@ -142,7 +142,7 @@ function getPensionAge(intent, session, response) {
     var context = session.attributes;
 
     // respond to
-    switch (getNextResponse(context)) {
+    switch (context)) {
         case 'askDob':
             log("Ask for Date of Birth");
             speechOutput.speech = "";
