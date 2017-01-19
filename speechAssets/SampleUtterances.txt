@@ -1,41 +1,28 @@
-PensionEligibilityIntent What are the eligibility criteria
-PensionEligibilityIntent Am I eligible
-PensionEligibilityIntent Am I eligible for U.K. pension
-PensionEligibilityIntent Am I eligible for pension
-PensionEligibilityIntent eligibility
-PensionEligibilityIntent When am I eligible for pension
-PensionEligibilityIntent Am I eligible for pension
-PensionEligibilityIntent What are the criteria
-PensionEligibilityIntent Is my husband eligible
-PensionEligibilityIntent Do I get pension
-PensionEligibilityIntent what pension
+UserInputIntent {gender}
+UserInputIntent {dob}
+UserInputIntent My gender is {gender}
+UserInputIntent I'm {gender}
+UserInputIntent I'm a {gender}
 
+UserInputIntent my birthday is {dob}
+UserInputIntent My birthday is {dob}
+UserInputIntent My date of birth is {dob}
+UserInputIntent date of birth is {dob}
+UserInputIntent I'm born {dob}
+UserInputIntent birthday is {dob}
+UserInputIntent born at {dob}
 
-PensionAgeIntent {dob}
-PensionAgeIntent {gender}
-PensionAgeIntent {year}
-PensionAgeIntent My birthday is {dob}
-PensionAgeIntent My date of birth is {dob}
-PensionAgeIntent date of birth is {dob}
-PensionAgeIntent I'm born {dob}
-PensionAgeIntent I'm born at {dob}
-PensionAgeIntent I'm {gender}
-PensionAgeIntent My gender is {gender}
-PensionAgeIntent I was born in {year}
-PensionAgeIntent I was born in {year}
-PensionAgeIntent What is my pension age
-PensionAgeIntent Pension age
-PensionAgeIntent pension age in the U.K.
-PensionAgeIntent Calculate my pension
-PensionAgeIntent Calculate my pension age
-PensionAgeIntent Pension age calculator
-PensionAgeIntent When do I get my pension
-PensionAgeIntent When pension
-PensionAgeIntent D.W.P. what is my pension
-PensionAgeIntent D.W.P. What is my pension age
-PensionAgeIntent D.W.P. Pension age
-PensionAgeIntent D.W.P. pension age in the U.K.
-PensionAgeIntent D.W.P. Calculate my pension
-PensionAgeIntent D.W.P. Pension age calculator
-PensionAgeIntent D.W.P. When do I get my pension
-PensionAgeIntent D.W.P. When pension
+StartCalculationIntent What is my pension age
+StartCalculationIntent Pension age
+StartCalculationIntent Pension age in england
+StartCalculationIntent Pension age in wales
+StartCalculationIntent Pension age in scotland
+StartCalculationIntent Pension age in northern ireland
+StartCalculationIntent Pension age in ireland
+StartCalculationIntent pension age in the U.K.
+StartCalculationIntent pension age in the United Kingdom
+StartCalculationIntent Calculate my pension
+StartCalculationIntent Calculate my pension age
+StartCalculationIntent Pension age calculator
+StartCalculationIntent When do I get my pension
+StartCalculationIntent When pension

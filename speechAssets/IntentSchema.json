@@ -1,12 +1,8 @@
 {
   "intents": [
     {
-      "intent": "PensionAgeIntent",
+      "intent": "UserInputIntent",
       "slots": [
-        {
-          "name": "year",
-          "type": "LIST_OF_YEARS"
-        },
         {
           "name": "dob",
           "type": "AMAZON.DATE"
@@ -21,10 +17,19 @@
       "intent": "PensionEligibilityIntent"
     },
     {
+      "intent": "StartCalculationIntent"
+    },
+    {
+      "intent": "AMAZON.StartOverIntent"
+    },
+    {
       "intent": "AMAZON.HelpIntent"
     },
     {
       "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
     }
   ]
 }
