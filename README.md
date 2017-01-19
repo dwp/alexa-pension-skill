@@ -6,6 +6,7 @@ We're using the [alexa-SDK for nodejs ](https://github.com/alexa/alexa-skills-ki
 
 # Preparing for upload to Lambda
 > We assume you have git and nodejs (including npm) installed. If you don't, pause here and install nodejs and git before you continue. 
+
 First open the terminal and get a copy of the repository
 ```
 git clone git@github.com:dwpdigitaltech/alexa-pension-skill.git
