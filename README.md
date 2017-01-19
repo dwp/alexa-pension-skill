@@ -20,6 +20,14 @@ npm install
 
 Lambda has an online editor where you can write or paste the functions you want to run. If your code has dependcies or need other local resources (e.g. file with json or XML) you can zip and upload it to AWS. If your unzipped package size is bigger than 10mb you won't be able to edit and update the code in the editor.
 
+What files do you need to zip:
+
+```
+./index.js
+./node_modules
+./OTHER_FILES_AND_ASSETS
+```
+
 > NOTE!
 > It's important that the index.js is in root directory of the zip.
 > You can do this by executing following command while being in the project folder
@@ -28,19 +36,11 @@ zip -r -D alexa-pension-skill-lambda.zip *
 ```
 
 
-# code
-In our example we have to convert date strings to date objects. Unfortunately  for which we're using the momentjs library. momentjs gives us more convenient API for date transformations than pure javscript including converting date strings to `Date` objects. 
-```javascript
-var Alexa = require('alexa-sdk');
-var moment = require('moment'); 
-```
-
-
 # The Voice Interface
 Amazon's
 The folder speech_assets has two files. One with the intent schema 
 
-When you export the project for AWS Lambda make sure you zip the files including following files and folders
+
 
 # Preparing the project for AWS Lambda
 ```
@@ -54,3 +54,11 @@ data
 cd YourProjectDirectory
 zip -r -D zipped.zip *
 ```
+# Uploading Code to AWS Lambda
+
+# Setting up the Alexa-Skill-kit
+
+# Testing
+Echoism.io
+On alexa
+Local Lambda testing with Events
