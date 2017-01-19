@@ -310,7 +310,7 @@ function isFutureDate(dob) {
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
     // alexa.appId = process.env.ALEXA_ID;
-    alexa.appId = "amzn1.ask.skill.be12eddd-c0f9-468d-a881-54dc7f25073b";
+    alexa.appId = "your skill ID"; // better store it as ENV variable at AWS Lambda
     // alexa.resources = languageStrings;
 
     // register intent handlers for each state + new session.
