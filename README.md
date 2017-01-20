@@ -1,19 +1,12 @@
 # alexa-pension-skill
-This is an Alexa skill that lets users find out what their pension age in the UK is. The goal of this project was to experiment with Alexa and to find out how to implement a multi-turn Alexa skill.
+This is an Alexa skill that lets users find out what their pension age in the UK is. The goal of this project was to understand how public service reach could be extended through the voice computing channel with Alexa and similar technologies and to find out how to implement a conversational Alexa skill that involves some memory of past questions.
 
-We're using the [alexa-SDK for nodejs ](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs "alexa-SDK for nodejs "). Amazon also has a [Java SDK](https://github.com/amzn/alexa-skills-kit-java "SDK for Java") and [python / Flask SDK](https://github.com/amzn/alexa-skills-kit-java "python / Flask SDK"). All SDKs can be run on AWS Lambda which is an AWS service that let you directly run functions in the cloud without running or managing a server. Hereby you only pay for the time your function runs.
 
-## Assets
+## Alexa technical components
+This demo uses the following components:
+* Alexa front-end user experience along with the support library [alexa-SDK for nodejs ](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs "alexa-SDK for nodejs ").
+* AWS Lambda for functional execution. All SDKs can be run on AWS Lambda which is an AWS service that let you directly run functions in the cloud without running or managing a server. Hereby you only pay for the time your function runs.
 
-```bash
-
-./index.js # contains all of our code and logic
-./index.backupg.js # was our first (and failed) attempt to develop an Alexa Skill
-./package.json # contains the project definition and dependencies
-./events #holds a session start event to test this app locally with the npm package lambda-local
-./data # has a json file with the rules for the pension calculation
-./screeshots # contains the screenshots for this readme.md
-```
 
 ## Preparing for upload to Lambda
 > We assume you have git and nodejs (including npm) installed. If you don't, pause here and install nodejs and git before you continue. 
@@ -29,36 +22,23 @@ cd alexa-pension-skill
 npm install
 ``` 
 
-Lambda has an online editor where you can write or paste the functions you want to run. If your code has dependencies or need other local resources (e.g. file with json or XML) you can zip and upload it to AWS. If your unzipped package size is bigger than 10mb you won't be able to edit and update the code in the editor.
+Lambda has an online editor where you can write or paste the functions you want to run. If your code has dependencies or need other local resources (e.g. file with json or XML) you can zip and upload it to AWS. If your unzipped package size is bigger than 10MB you won't be able to edit and update the code in the editor.
 
-## What files do you need to zip:
+## The files AWS Lambda needs
+The archive has files for both Alexa and AWS Lambda. The ones below are for Lambda. 
 
 ```
-# Essential! 
 ./index.js # You need to have a file named index.js in your folder when you zip it up for uploading to AWS Lambda
 ./node_modules # This folder contains all the dependencies
+./data # for future version that uses the pension rules
 
-# if you have other directories or files with code, you need to add them too
 ```
 
-> NOTE!
+> Zip structure
 > It's important that the index.js is in root directory of the zip.
 > You can do this by executing following command while being in the project folder
 ```
-zip -r -D alexa-pension-skill-lambda.zip *
-```
-
-## Preparing the project for AWS Lambda
-```
-index.js
-node_modules
-data
-```
-
-
-```
-cd YourProjectDirectory
-zip -r -D zipped.zip *
+zip -r -D alexa-pension-skill-lambda.zip index.js node_modules/* data/*
 ```
 
 ## Uploading Code to AWS Lambda
