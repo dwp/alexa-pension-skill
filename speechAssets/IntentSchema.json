@@ -1,12 +1,17 @@
 {
   "intents": [
     {
-      "intent": "UserInputIntent",
+      "intent": "DateOfBirthIntent",
       "slots": [
         {
           "name": "dob",
           "type": "AMAZON.DATE"
-        },
+        }
+      ]
+    },
+    {
+      "intent": "GenderIntent",
+      "slots": [
         {
           "name": "gender",
           "type": "LIST_OF_GENDERS"
