@@ -1,11 +1,7 @@
-<p>
 # alexa-pension-skill
 This is an Alexa skill that lets users find out what their pension age in the UK is. The goal of this project was to experiment with Alexa and to find out how to implement a multi-turn Alexa skill.
 
 We're using the [alexa-SDK for nodejs ](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs "alexa-SDK for nodejs "). Amazon also has a [Java SDK](https://github.com/amzn/alexa-skills-kit-java "SDK for Java") and [python / Flask SDK](https://github.com/amzn/alexa-skills-kit-java "python / Flask SDK"). All SDKs can be run on AWS Lambda. Lambda is an AWS service that let you directly run functions in the cloud without running or managing a server. Hereby you only pay for the time your function runs.
-
-</p>
-<p>
 
 ## Assets
 
@@ -18,8 +14,6 @@ We're using the [alexa-SDK for nodejs ](https://github.com/alexa/alexa-skills-ki
 ./data # has a json file with the rules for the pension calculation
 ./screeshots # contains the screenshots for this readme.md
 ```
-</p>
-<p>
 
 ## Preparing for upload to Lambda
 > We assume you have git and nodejs (including npm) installed. If you don't, pause here and install nodejs and git before you continue. 
@@ -37,8 +31,6 @@ npm install
 
 Lambda has an online editor where you can write or paste the functions you want to run. If your code has dependencies or need other local resources (e.g. file with json or XML) you can zip and upload it to AWS. If your unzipped package size is bigger than 10mb you won't be able to edit and update the code in the editor.
 
-</p>
-<p>
 ## What files do you need to zip:
 
 ```
@@ -55,8 +47,7 @@ Lambda has an online editor where you can write or paste the functions you want 
 ```
 zip -r -D alexa-pension-skill-lambda.zip *
 ```
-</p>
-<p>
+
 ## Preparing the project for AWS Lambda
 ```
 index.js
@@ -69,7 +60,7 @@ data
 cd YourProjectDirectory
 zip -r -D zipped.zip *
 ```
-</p>
+
 ## Uploading Code to AWS Lambda
 
 <p align="center">
