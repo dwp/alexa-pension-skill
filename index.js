@@ -18,11 +18,11 @@ var states = {
 // Outbound messages spoken back to end user.
 // alexa-nodejs-sdk wraps all strings in the advanced SSML speech markup (<speak>STRING HERE</speak>) that allows phonetic overrides etc.
 var snippets = {
-            WELCOME: "<s>Welcome to the <say-as intepret-as='spell-out'>DWP</say-as>Pension Age calculator.</s> " +
-            "<s>You can ask to calculate your pension age or for the <say-as intepret-as='spell-out'>UK</say-as> pension eligibility criteria?</s>",
+            WELCOME: "<s>Welcome to the <say-as intepret-as=\"spell-out\">DWP</say-as>Pension Age calculator.</s> " +
+            "<s>You can ask to calculate your pension age or for the <say-as intepret-as=\"spell-out\">UK</say-as> pension eligibility criteria?</s>",
 
             WELCOME_REPROMPT: "You can say, " +
-            "Calculate my pension age or, say what are the eligibility criteria in the <say-as intepret-as='spell-out'>UK</say-as>.",
+            "Calculate my pension age or, say what are the eligibility criteria in the <say-as intepret-as=\"spell-out\">UK</say-as>.",
 
             GENDER: "Thank you. Are you female or male?",
 
@@ -36,9 +36,9 @@ var snippets = {
 
             DATEOFBIRTH_INVALID_FUTURE: "Nice you're from the future. Did you bring a hoverboard? Seriously, can you please say your actual date of birth please?",
 
-            DATEOFBIRTH_INVALID: "Please say your date of birth. For example you can say, my date of birth is the <say-as intepret-as='date'>19831220</say-as>",
+            DATEOFBIRTH_INVALID: "Please say your date of birth. For example you can say, my date of birth is the <say-as intepret-as=\"date\">19831220</say-as>",
 
-            STOP: "Thank you for using the <say-as intepret-as='spell-out'>DWP</say-as> pension calculator.",
+            STOP: "Thank you for using the <say-as intepret-as=\"spell-out\">DWP</say-as> pension calculator.",
 
             HELP: "You can ask things like: What is my pension age or what are the eligibility criteria.",
 
