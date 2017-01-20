@@ -73,6 +73,10 @@ Lambda functions now need a trigger on which the it gets executed. In our case o
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/005-triggers.png" width="50%">
 </p>
 
+<p>
+Now click on "Next".
+</p>
+
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/006-triggers.png" width="50%">
 </p>
