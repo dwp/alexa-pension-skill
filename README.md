@@ -146,25 +146,69 @@ Lambda functions now need a trigger on which the it gets executed. In our case o
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/016-config-interaction-model.png" width="50%">
 </p>
 
+<p>
+	In the same window click on the "Add Slot Type" button to create a custom slot for Gender which we need for the GenderIntent defined in the Intent Schema. Name the slot Type "LIST_OF_GENDERS". Now enter the values "male" and "female" below and click on "Save". After it's saved click on "Next"
+</p>
+
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/017-custom-slot-type.png" width="50%">
 </p>
+
+<p>
+	Now we need to link this Alexa skill with our Lambda function. To do that select "AWS Lambda ARN (Amazon Resrouce Name)" as "Service Endpoint Type" and Choose "Europe" as Region. Finally Enter the ARN ID for our Lambda function. You can find it at the top right in the UI of your AWS Lambda function you created earlier. After you're done with that click on Next.
+
+	
+</p>
+
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/018-connect-to-lambda.png" width="50%">
+</p>
+	Now we're almost done. Lastly we need to add the Alexa App ID as Environment Variable to our Lambda function. For that copy the Alexa Skill ID at the top of the Alexa Console and go back to your Lambda function.
+<p>
+	
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/019-get-app-id.png" width="50%">
 </p>
+
+<p>
+	Within your Lambda function scroll down until where you can add Environment variables. Add the one variable with the key "appId" and the Alexa Skill ID you copied before as value.
+
+	Now you're done and can test the skill.
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/020-set-appid-in-env-var.png" width="50%">
+</p>
+
+<p>
+	To test if everything works click on "Test" within your Lambda function. A pop up window opens and search for "Alexa Start Session" from the "Sample event template" dropdown. Replace the applicationId with your Alexa Skill ID. There are two entries so make sure you update both.
+
+	When you're done click on "Save and test".
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/021-lambda-test-session-start-event.png" width="50%">
 </p>
+
+<p>
+	If all worked out you should see a message confirming that the execution result succeeded.
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/022-lambda-success.png" width="50%">
 </p>
+
+<p>
+	If you want to test the app more thoroughly go back to the Alexa Skill Kit configuration at the Amazon Developer Console. It should still be open if you haven't closed this window before. Otherwise you can find it within your Alexa Skill on the left hand side under "Test".
+
+	You need to first open the app by saying something like "Alexa open YOUR_INVOCATION_NAME" or simply "Start YOUR_INVOCATION_NAME". After that you're ready to ask your skill questions about your pension. 
+</p>
+
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/023-test-interface.png" width="50%">
+</p>
+
+<p>
+	When you reached this stage and you own an Amazon Echo or Echo Dot you can test it on your device. Given that you developed the skill with the same amazon accounts.
+
+	That's it. Enjoy!
 </p>
