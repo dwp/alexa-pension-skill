@@ -42,17 +42,31 @@ zip -r -D alexa-pension-skill-lambda.zip index.js node_modules/* data/*
 ```
 
 ## Uploading Code to AWS Lambda
+<p>
+	Go to the AWS service overview and search for Lambda
+</p>
 
 <p align="center">
+
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/001-aws-lambda.png" width="50%">
 </p>
 
+<p>
+	Click on the "Create a Lambda function"
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/002-create-lambda-function.png" width="50%">
 </p>
 
+<p>
+	On the next screen select the "Blank Function" blueprint. 
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/003-blueprints.png" width="50%">
+</p>
+
+<p>
+Lambda functions now need a trigger on which the it gets executed. In our case our trigger is the Alexa Skill Kit. Click on the dashed square left to the Lambda Icon and Select "Alexa Skill Kit".
 </p>
 
 <p align="center">
@@ -63,44 +77,76 @@ zip -r -D alexa-pension-skill-lambda.zip index.js node_modules/* data/*
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/006-triggers.png" width="50%">
 </p>
 
+<p>
+	In the next step specify the name and description of the function. Make sure the Runtime is set to Node.js 4.3.
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/007-config-function.png " width="50%">
 </p>
 
+<p>
+	In the same window you need to create a new IAM Role for our function. Scroll to Role Summary and select "Create a custom role" in the Role dropdown.
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/008-iam-role.png" width="50%">
 </p>
 
+<p>A new window opens. Give the role a name and save.
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/009-create-iam-role.png" width="50%">
 </p>
 
+<p>
+	Back in the Configure function screen select the IAM role you created. You can leave everything else like it was for now. Scroll down and continue.
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/010-choose-role.png" width="50%">
 </p>
 
+<p>Review your settings and click on "Create function"</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/011-create-function-finish.png" width="50%">
 </p>
 
+<p>
+	Now you are in the code-inline editor. However since our code has dependencies and a few other files we need to upload our code as zip. So click on the "Code entry type" dropdown and select "Upload a .ZIP file". Choose the zip file you created earlier. Normally even if we upload a zip file, Lambda would still let us edit the index.js file in the inline-code editor. However, because our node_modules files with all the dependencies is too big it won't show it anymore.
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/012-upload-zip.png" width="50%">
 </p>
 
 
 # Setting up the Alexa-Skill-kit
+<p>
+	Now go to the <a href="https://developer.amazon.com/home.html">Amazon Developer Console</a>. If you don't have an account yet create one. For the purpose of testing it should be the same account which is associated with your Alexa Account. 
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/013-alexa-skills.png" width="50%">
+</p>
+
+<p>
+	At the top menu click on Alexa and then continue with Get Started with Alexa Skill Kit.
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/014-alexa-skills-kit.png" width="50%">
 </p>
+
+<p>
+	Now we started setting up a new Alexa skill. Choose your Language, give your skill a name and finally define an invocation name. The invocation name has to have at least two words. It will be the keyword for starting your skill on Alexa e.g. "Alexa open pension age calculator". 
+</p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/015-create-new-skill.png" width="50%">
 </p>
+<p>
+	In the next screen go to speech_assets folder of this repository and copy the Intent Schema and Sample Utterances into respective text areas.
+</p>
+
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/016-config-interaction-model.png" width="50%">
 </p>
+
+
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/017-custom-slot-type.png" width="50%">
 </p>
@@ -122,8 +168,3 @@ zip -r -D alexa-pension-skill-lambda.zip index.js node_modules/* data/*
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/023-test-interface.png" width="50%">
 </p>
-
-# Testing
-Echoism.io
-On alexa
-Local Lambda testing with Events
