@@ -6,8 +6,10 @@ We're using the [alexa-SDK for nodejs ](https://github.com/alexa/alexa-skills-ki
 
 ## Assets
 
-```
-./index.js # contains all of our code and logic
+```bash
+# contains all of our code and logic
+./index.js
+
 ./index.backupg.js # was our first (and failed) attempt to develop an Alexa Skill
 ./package.json # contains the project definition and dependencies
 ./events #holds a session start event to test this app locally with the npm package lambda-local
