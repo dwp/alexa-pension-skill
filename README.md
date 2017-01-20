@@ -71,100 +71,78 @@ zip -r -D zipped.zip *
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/002-create-lambda-function.png" width="50%">
-<hr>
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/003-blueprints.png" width="50%">
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/005-triggers.png" width="50%">
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/006-triggers.png" width="50%">
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/007-config-function.png " width="50%">
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/008-iam-role.png" width="50%">
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/009-create-iam-role.png" width="50%">
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/010-choose-role.png" width="50%">
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/011-create-function-finish.png" width="50%">
-<hr>
 </p>
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/012-upload-zip.png" width="50%">
-<hr>
 </p>
 
 
 # Setting up the Alexa-Skill-kit
 <p>
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/013-alexa-skills.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/014-alexa-skills-kit.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/015-create-new-skill.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/016-config-interaction-model.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/017-custom-slot-type.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/018-connect-to-lambda.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/019-get-app-id.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/020-set-appid-in-env-var.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/021-lambda-test-session-start-event.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/022-lambda-success.png" width="50%">
-<hr>
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/023-test-interface.png" width="50%">
-<hr>
 </p>
 
 # Testing
