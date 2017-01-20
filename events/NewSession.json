@@ -7,7 +7,7 @@
       "userId": "amzn1.ask.account.[unique-value-here]"
     },
     "application": {
-      "applicationId": "amzn1.ask.skill.be12eddd-c0f9-468d-a881-54dc7f25073b"
+      "applicationId": "YOUR_ID_HERE"
     }
   },
   "version": "1.0",
@@ -28,7 +28,7 @@
         }
       },
       "application": {
-        "applicationId": "amzn1.ask.skill.be12eddd-c0f9-468d-a881-54dc7f25073b"
+        "applicationId": "YOUR_ID_HERE"
       },
       "user": {
         "userId": "amzn1.ask.account.[unique-value-here]"
