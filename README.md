@@ -72,7 +72,25 @@ zip -r -D zipped.zip *
 
 ![001]
 
+![002]
 
+![003]
+
+![005]
+
+![006]
+
+![007]
+
+![008]
+
+![009]
+
+![010]
+
+![011]
+
+![012]
 
 # Setting up the Alexa-Skill-kit
 [013]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/013-alexa-skills.png
@@ -87,6 +105,27 @@ zip -r -D zipped.zip *
 [022]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/022-lambda-success.png
 [023]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/023-test-interface.png
 
+![013]
+
+![014]
+
+![015]
+
+![016]
+
+![017]
+
+![018]
+
+![019]
+
+![020]
+
+![021]
+
+![022]
+
+![023]
 # Testing
 Echoism.io
 On alexa
