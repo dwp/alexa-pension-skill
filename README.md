@@ -58,7 +58,7 @@ zip -r -D zipped.zip *
 ```
 # Uploading Code to AWS Lambda
 
-[001]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/001-aws-lambda.png {: width="400px"}
+[001]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/001-aws-lambda.png | 250x
 [002]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/002-create-lambda-function.png {: width="400px"}
 [003]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/003-blueprints.png {: width="400px"}
 [005]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/005-triggers.png {: width="400px"}
