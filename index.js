@@ -160,7 +160,7 @@ var startStateHandlers = Alexa.CreateStateHandler(states.START, {
 
 var dobStateHandlers = Alexa.CreateStateHandler(states.DOB, {
 
-    'UserDobInputIntent': function () {
+    'DateOfBirthIntent': function () {
         var speechText = "",
             repromptText = "";
 
@@ -221,7 +221,7 @@ var dobStateHandlers = Alexa.CreateStateHandler(states.DOB, {
 
 
 var genderStateHandlers = Alexa.CreateStateHandler(states.GENDER, {
-    'UserInputIntent': function () {
+    'GenderIntent': function () {
         var speechText = "",
             repromptText = "";
 

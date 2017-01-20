@@ -1,16 +1,16 @@
-UserInputIntent {gender}
-UserInputIntent {dob}
-UserInputIntent My gender is {gender}
-UserInputIntent I'm {gender}
-UserInputIntent I'm a {gender}
+GenderIntent {gender}
+GenderIntent My gender is {gender}
+GenderIntent I'm {gender}
+GenderIntent I'm a {gender}
 
-UserInputIntent my birthday is {dob}
-UserInputIntent My birthday is {dob}
-UserInputIntent My date of birth is {dob}
-UserInputIntent date of birth is {dob}
-UserInputIntent I'm born {dob}
-UserInputIntent birthday is {dob}
-UserInputIntent born at {dob}
+DateOfBirthIntent {dob}
+DateOfBirthIntent my birthday is {dob}
+DateOfBirthIntent My birthday is {dob}
+DateOfBirthIntent My date of birth is {dob}
+DateOfBirthIntent date of birth is {dob}
+DateOfBirthIntent I'm born {dob}
+DateOfBirthIntent birthday is {dob}
+DateOfBirthIntent born at {dob}
 
 StartCalculationIntent What is my pension age
 StartCalculationIntent Pension age
