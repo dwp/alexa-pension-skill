@@ -68,9 +68,11 @@ zip -r -D zipped.zip *
 
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/001-aws-lambda.png" width="50%">
+---
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/002-create-lambda-function.png" width="50%">
+---
 </p>
 <p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/003-blueprints.png" width="50%">
