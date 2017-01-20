@@ -4,7 +4,18 @@ This is an Alexa skill that lets users find out what their pension age in the UK
 We're using the [alexa-SDK for nodejs ](https://github.com/alexa/alexa-skills-kit-sdk-for-nodejs "alexa-SDK for nodejs "). Amazon also has a [Java SDK](https://github.com/amzn/alexa-skills-kit-java "SDK for Java") and [python / Flask SDK](https://github.com/amzn/alexa-skills-kit-java "python / Flask SDK"). All SDKs can be run on AWS Lambda. Lambda is an AWS service that let you directly run functions in the cloud without running or managing a server. Hereby you only pay for the time your function runs.
 
 
-# Preparing for upload to Lambda
+## Assets
+
+```
+./index.js # contains all of our code and logic
+./index.backupg.js # was our first (and failed) attempt to develop an Alexa Skill
+./package.json # contains the project definition and dependencies
+./events #holds a session start event to test this app locally with the npm package lambda-local
+./data # has a json file with the rules for the pension calculation
+./screeshots # contains the screenshots for this readme.md
+```
+
+## Preparing for upload to Lambda
 > We assume you have git and nodejs (including npm) installed. If you don't, pause here and install nodejs and git before you continue. 
 
 First open the terminal and get a copy of the repository
@@ -38,13 +49,9 @@ zip -r -D alexa-pension-skill-lambda.zip *
 ```
 
 
-# The Voice Interface
-Amazon's
-The folder speech_assets has two files. One with the intent schema 
 
 
-
-# Preparing the project for AWS Lambda
+## Preparing the project for AWS Lambda
 ```
 index.js
 node_modules
