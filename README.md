@@ -1,8 +1,3 @@
-[logo]: https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 2"
-[001]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/001-aws-lambda.png
-[002]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/002-create-lambda-function.png
-
-![alt text][001]
 # alexa-pension-skill
 This is an Alexa skill that lets users find out what their pension age in the UK is. The goal of this project was to experiment with Alexa and to find out how to implement a multi-turn Alexa skill.
 
@@ -63,7 +58,34 @@ zip -r -D zipped.zip *
 ```
 # Uploading Code to AWS Lambda
 
+[001]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/001-aws-lambda.png
+[002]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/002-create-lambda-function.png
+[003]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/003-blueprints.png
+[005]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/005-triggers.png
+[006]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/006-triggers.png
+[007]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/007-config-function.png
+[008]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/008-iam-role.png
+[009]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/009-create-iam-role.png
+[010]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/010-choose-role.png
+[011]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/011-create-function-finish.png
+[012]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/012-upload-zip.png
+
+![001]
+
+
+
 # Setting up the Alexa-Skill-kit
+[013]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/013-alexa-skills.png
+[014]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/014-alexa-skills-kit.png
+[015]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/015-create-new-skill.png
+[016]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/016-config-interaction-model.png
+[017]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/017-custom-slot-type.png
+[018]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/018-connect-to-lambda.png
+[019]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/019-get-app-id.png
+[020]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/020-set-appid-in-env-var.png
+[021]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/021-lambda-test-session-start-event.png
+[022]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/022-lambda-success.png
+[023]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/023-test-interface.png
 
 # Testing
 Echoism.io
