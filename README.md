@@ -58,14 +58,14 @@ zip -r -D zipped.zip *
 ```
 # Uploading Code to AWS Lambda
 
-[001]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/001-aws-lambda.png | 250x
-[002]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/002-create-lambda-function.png {: width="400px"}
-[003]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/003-blueprints.png {: width="400px"}
-[005]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/005-triggers.png {: width="400px"}
-[006]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/006-triggers.png {: width="400px"}
-[007]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/007-config-function.png {: width="400px"}
-[008]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/008-iam-role.png {: width="400px"}
-[009]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/009-create-iam-role.png {: width="400px"}
+[001]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/001-aws-lambda.png
+[002]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/002-create-lambda-function.png 
+[003]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/003-blueprints.png 
+[005]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/005-triggers.png 
+[006]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/006-triggers.png 
+[007]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/007-config-function.png 
+[008]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/008-iam-role.png 
+[009]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/009-create-iam-role.png 
 [010]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/010-choose-role.png
 [011]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/011-create-function-finish.png
 [012]: https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/012-upload-zip.png
