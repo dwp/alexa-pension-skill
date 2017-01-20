@@ -271,7 +271,9 @@ var genderStateHandlers = Alexa.CreateStateHandler(states.GENDER, {
 
 var answerStateHandlers = Alexa.CreateStateHandler(states.ANSWER, {
     'Answer': function () {
-        var speechText = "Your pension age is sixty five";
+        // TODO implement function to properly calculate pension age
+        // index.backup.js holds this code but I didn't manage to integrate it with this file
+        var speechText = "Your pension age is sixty eigth";
 
         // Change State to Start again
         this.handler.state = states.START;
@@ -309,8 +311,8 @@ function isFutureDate(dob) {
 
 exports.handler = function(event, context, callback) {
     var alexa = Alexa.handler(event, context);
-    // alexa.appId = process.env.ALEXA_ID;
-    alexa.appId = "your skill ID"; // better store it as ENV variable at AWS Lambda
+    alexa.appId = process.env.appId;
+    // alexa.appId = "your skill ID"; // better store it as ENV variable at AWS Lambda
     // alexa.resources = languageStrings;
 
     // register intent handlers for each state + new session.
