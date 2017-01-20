@@ -109,7 +109,7 @@ zip -r -D zipped.zip *
 
 
 # Setting up the Alexa-Skill-kit
-<p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/013-alexa-skills.png" width="50%">
 </p>
 <p align="center">
