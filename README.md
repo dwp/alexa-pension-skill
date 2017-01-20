@@ -102,17 +102,50 @@ zip -r -D zipped.zip *
 
 
 # Setting up the Alexa-Skill-kit
+<p>
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/013-alexa-skills.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/014-alexa-skills-kit.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/015-create-new-skill.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/016-config-interaction-model.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/017-custom-slot-type.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/018-connect-to-lambda.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/019-get-app-id.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/020-set-appid-in-env-var.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/021-lambda-test-session-start-event.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/022-lambda-success.png" width="50%">
+<hr>
+</p>
+<p align="center">
 <img src="https://github.com/dwpdigitaltech/alexa-pension-skill/blob/master/screenshots/023-test-interface.png" width="50%">
+<hr>
+</p>
 
 # Testing
 Echoism.io
