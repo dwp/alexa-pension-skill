@@ -1,4 +1,4 @@
-# alexa-pension-skill
+# alexa-pension-skill – A multi-turn Alexa skill
 This is an Alexa skill that lets users find out what their pension age in the UK is. The goal of this project was to understand how public service reach could be extended through the voice computing channel with Alexa and similar technologies and to find out how to implement a conversational Alexa skill that involves some memory of past questions.
 
 
